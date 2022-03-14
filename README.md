@@ -2,6 +2,10 @@
   <img src="https://user-images.githubusercontent.com/79030801/158131239-99cc298d-2524-4b86-97a4-f1ddee3ebad0.png" />
 </p>
 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79030801/158203676-c32049f9-6005-4186-a2c0-411a5c369b23.png" />
+</p>
+
 ## Jenkin's Plugins : 
 <ul style=“list-style-type:square”>
 <li>Slack</li>
@@ -15,10 +19,98 @@
   <li>Violations</li>
   <li>Build Pipeline</li>
 
-## Set up Nexus and come back after.
+## Set up Nexus.
 Now, proceed to branch : <a href="https://github.com/mikechngwk/CICD/tree/third-nexus-setup">third-nexus-setup</a>
   
+## Set up SonarQube.
+Now, proceed to branch : <a href="https://github.com/mikechngwk/CICD/tree/third-nexus-setup">third-nexus-setup</a>
+ 
+## Integrate Jenkins with Slack 
+  <img src="https://user-images.githubusercontent.com/79030801/158134468-b8e4b6f7-3632-4d03-bfb2-169ebbe869ef.png" />
+  
+  Integrate your Jenkins with Slack, you may refer to this <a href="https://www.youtube.com/watch?v=TWwvxn2-J7E&t=19s">Slack-Jenkins-Integration</a>
+  
+ ## Build jobs in Pipeline
+  
+<p align="center">
+  <ins>1st Job: Build-Artifact</ins><br>
+</p>
+Build: Invoke top-level Maven targets
+<ul style=“list-style-type:square”>
+  <li>Goal: <code>install -DskipTests</code></li>
+  <li>Settings file in filesystem</li>
+  <li>File path: settings.xml</li>
+  <li>Properties: Fill up the properties based on your variables.<br>Eg. NEXUSPORT=8081, RELEASE-REPO= CICD-Maven-Repository-RELEASE</li>
+    </ul><br>
+  
+Post-Build Action: Slack-Notification
+<ul style=“list-style-type:square”>
+  <li>Notify Build-Start</li>
+    <li>Notify Success</li>
+    <li>Notify Unstable</li>
+      <li>Notify Every Failure</li>
+  </ul><br>
+  
+Post-Build Action: Build Other projects
+<ul style=“list-style-type:square”>
+  <li>Project Name: Integration-Test</li>
+  </ul><br>
+  
+  
+   <p align="center">
+  <ins>2nd Job: Integration-Test</ins><br>
+</p>
+Build: Invoke top-level Maven targets
+<ul style=“list-style-type:square”>
+  <li>Goal: <code>verify -DskipUnitTests</code></li>
+  <li>Settings file in filesystem</li>
+  <li>File path: settings.xml</li>
+  <li>Properties: Fill up the properties based on your variables.<br>Eg. NEXUSPORT=8081, RELEASE-REPO= CICD-Maven-Repository-RELEASE</li>
+  </ul><br>
+ 
 
+Post-Build Action: Slack-Notification
+<ul style=“list-style-type:square”>
+  <li>Notify Build-Start</li>
+    <li>Notify Success</li>
+    <li>Notify Unstable</li>
+      <li>Notify Every Failure</li>
+   </ul><br>
+  
+  Post-Build Action: Build Other projects
+<ul style=“list-style-type:square”>
+  <li>Project Name: Code-Analysis-CheckStyles</li>
+  </ul><br>
+  
+  
+  
+ <p align="center">
+  <ins>3rd Job: Code-Analysis-CheckStyles</ins><br>
+</p>
+Build: Invoke top-level Maven targets
+<ul style=“list-style-type:square”>
+  <li>Goal: <code>checkstyle:checkstyle</code></li>
+  <li>Settings file in filesystem</li>
+  <li>File path: settings.xml</li>
+  <li>Properties: Fill up the properties based on your variables.<br>Eg. NEXUSPORT=8081, RELEASE-REPO= CICD-Maven-Repository-RELEASE</li>
+ 
+Post-Build Action: Report Violations
+<ul style=“list-style-type:square”>
+  <li>Adjust your checkstyle violations on the threshold for Failure & Unstable</li>
+  <li>XML Filename pattern: target/checkstyle-result.xml (generated from checkstyle checks)</li>
+
+  
+  
+<li>Source Type: Custom</li>
+  <li>Port range: 8081</li>
+<li>Source: Jenkins Security Group</li>
+<li>Description: Allow Jenkins to upload artifact to nexus server</li>
+</ul>
+  
+  
+  
+  
+  
 Inbound rule1: 
 <ul style=“list-style-type:square”>
 <li>Type: SSH</li>
