@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/79030801/158127729-6f7b152d-2919-4d93-bb0c-bf8b76bded15.jpg" />
+  <img src="https://user-images.githubusercontent.com/79030801/158134282-f1ff806c-318e-4221-afb0-7cb3849169cc.png" />
 </p>
 
 ## Description :
-In an agile software development life cycle,there are countless number of code changes from sprints. As such, developer have to deploy their code and test it whenever there is a code change and this is rather time consuming. 
-As such, this project aims to create a infrastructure which enables Continuous Integration(CI) & Continuous Delivery(CD) life cycle where it will automate Build->Test->Deploy for every code commit. A notification will also be sent to developer through Slack whenever a job is triggered in this CICD LifeCycle. 
+We will setup EC2 instances for all of our servers.
+
 
 Developer will be notified if there are any fatal code bugs and they can fix it immediately. Bugs will be presented in a very readable format with SonarQube.
 
