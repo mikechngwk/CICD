@@ -2,42 +2,18 @@
   <img src="https://user-images.githubusercontent.com/79030801/158134282-f1ff806c-318e-4221-afb0-7cb3849169cc.png" />
 </p>
 
-## Description :
+## EC2 Instances :
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79030801/158169098-d1ed585a-58bc-4a48-9a35-b1d29521673d.png" />
+</p>
+
 We will setup EC2 instances for all of our servers.
+Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <mark>userdata</mark>userdata for the bash scripts for each individual servers.
+
+## Security Group : 
+
+
 
 
 Developer will be notified if there are any fatal code bugs and they can fix it immediately. Bugs will be presented in a very readable format with SonarQube.
-
-## Techonologies :
-<p float="left">
-<img src="https://user-images.githubusercontent.com/79030801/158131239-99cc298d-2524-4b86-97a4-f1ddee3ebad0.png" style="height: auto; width:200px;"/>
-  
-  <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/158134417-71f0a27c-44d5-4eaa-bb27-5c5d3d646519.png" style="height: auto; width:200px;"/>
-  
-  <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/158134282-f1ff806c-318e-4221-afb0-7cb3849169cc.png" style="height: auto; width:200px;"/>
-  
-<img src="https://user-images.githubusercontent.com/79030801/158134570-261777f5-8185-4974-ba06-81056ef651a8.png" style="height: auto; width:200px;"/>
-  
-  <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/158134508-5cd6abdf-8b9e-410c-a356-345dce9f7fc7.png" style="height: auto; width:200px;"/>
-  
-  <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/158134468-b8e4b6f7-3632-4d03-bfb2-169ebbe869ef.png" style="height: auto; width:200px;"/>
-  
-  <img src="https://user-images.githubusercontent.com/79030801/158134381-8205a586-f4ce-4e80-bf3d-09e5e9a96fbd.png" style="height: auto; width:200px;"/>
-  
-  <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/158131450-20f98a4c-64da-493b-bde7-085c7b86139d.png" style="height: auto; width:200px;"/>
-  
-  <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/158134444-85982182-6bff-4b69-9288-9da249884454.png" style="height: auto; width:200px;"/>
-  
-  <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/158166082-62bdaa5a-1884-46b5-a1f1-1e261672545f.png" style="height: auto; width:200px;"/>
-  
-  <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/158166169-ba12475e-e9f7-4907-b454-59965892af21.png" style="height: auto; width:200px;"/>
-  
-</p>
-
-## Infrastructure :
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/79030801/158167797-861e7fef-3af0-4ae1-b98a-68e5c657049c.png" />
-</p>
-
-
 
