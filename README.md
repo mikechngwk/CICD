@@ -11,8 +11,9 @@ We will setup EC2 instances for all of our servers.
 Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <code> <b>userdata</b> </code>for the bash scripts for each individual servers.
 
 ## Security Group : 
-
-<b><u>SG: CICD-Jenkins-SG</b></u><br>
+<p align="center">
+  <ins>SG: CICD-Jenkins-SG</ins><br>
+</p>
 Inbound rule1: 
 <ul style=“list-style-type:square”>
 <li>Type: SSH</li>
@@ -46,6 +47,46 @@ Inbound rule5:(To be added after windows-security-group is created)
 <li>Source Type: Custom</li>
 <li>Source: Windows-SG</li>
 <li>Description: Allow windows server/slave to connect jenkins/master</li>
+</ul>
+
+
+<p align="center">
+  <ins>SG: CICD-Nexus-SG</ins><br>
+</p>
+Inbound rule1:(To be added after jenkins-security-group is created)
+<ul style=“list-style-type:square”>
+<li>Type: Custom TCP</li>
+<li>Source Type: Custom</li>
+  <li>Port range: 8081</li>
+<li>Source: Jenkins Security Group</li>
+<li>Description: Allow Jenkins to upload artifact to nexus server</li>
+</ul>
+
+Inbound rule2:
+<ul style=“list-style-type:square”>
+<li>Type: SSH</li>
+<li>Source Type: Custom</li>
+  <li>Port range: 22</li>
+<li>Source: MyIP</li>
+<li>Description: Allow local machine to connect to Nexus through SSH</li>
+</ul>
+
+Inbound rule3:(To be added after app-server-security-group is created)
+<ul style=“list-style-type:square”>
+<li>Type: Custom TCP</li>
+<li>Source Type: Custom</li>
+  <li>Port range: 8081</li>
+<li>Source: app-server-security-group</li>
+<li>Description: Allows app server(tomcat) to download artifact</li>
+</ul>
+
+Inbound rule4:
+<ul style=“list-style-type:square”>
+<li>Type: Custom TCP</li>
+<li>Source Type: MyIP</li>
+  <li>Port range: 8081</li>
+<li>Source: MyIP</li>
+<li>Description: Nexus port = 8081</li>
 </ul>
 
 
