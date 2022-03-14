@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/79030801/158131239-99cc298d-2524-4b86-97a4-f1ddee3ebad0.png" />
+  <img src="https://user-images.githubusercontent.com/79030801/158134570-261777f5-8185-4974-ba06-81056ef651a8.png" />
 </p>
 
 ## Jenkin's Plugins : 
