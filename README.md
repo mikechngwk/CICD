@@ -9,7 +9,7 @@
 ## Setting up SonarQube :
 1. Create a new project named: CICD-Project
 2. Set up Quality Gates : Condition-Bugs, threshold to be determined by developer
-3. <a href="https://github.com/mikechngwk/CICD/tree/second-jenkins">Jenkins-Sonarqube-Integration</a>
+3. <a href="https://www.youtube.com/watch?v=KsTMy0920go">Jenkins-Sonarqube-Integration</a>
 
-<a href="https://www.youtube.com/watch?v=KsTMy0920go">Return to Jenkins</a>
+<a href="https://github.com/mikechngwk/CICD/tree/second-jenkins">Return to Jenkins</a>
 
