@@ -2,15 +2,7 @@
   <img src="https://user-images.githubusercontent.com/79030801/158134282-f1ff806c-318e-4221-afb0-7cb3849169cc.png" />
 </p>
 
-## EC2 Instances :
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/79030801/158169098-d1ed585a-58bc-4a48-9a35-b1d29521673d.png" />
-</p>
-
-We will setup EC2 instances for all of our servers.
-Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <code> <b>userdata</b> </code>for the bash scripts for each individual servers.
-
-## Security Group : 
+## EC2's Security Group : 
 <p align="center">
   <ins>SG: CICD-Jenkins-SG</ins><br>
 </p>
@@ -196,6 +188,34 @@ Inbound rule5:
   <li>Port range: 8080</li>
   <li>Source: 0.0.0.0/0</li>
 <li>Description: To be able to access the tomcat server webpage</li>
+</ul>
+
+## EC2 Instances :
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79030801/158169098-d1ed585a-58bc-4a48-9a35-b1d29521673d.png" />
+</p>
+
+We will setup EC2 instances for all of our servers.
+Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <code> <b>userdata</b></code>for the bash scripts for each individual servers.
+
+<p align="center">
+  <ins>CICD-SonarQube-Server</ins><br>
+</p>
+<ul style=“list-style-type:square”>
+<li>AMI: Ubuntu 18.0</li>
+<li>Tier: t2.medium</li>
+  <li>PaC: userdata/sonar-setup.sh</li>
+  <li>Security-Group: CICD-Sonar-SG </li>
+</ul>
+
+<p align="center">
+  <ins>CICD-Nexus-Server</ins><br>
+</p>
+<ul style=“list-style-type:square”>
+<li>AMI: CentOS 7.0</li>
+<li>Tier: t2.medium</li>
+  <li>PaC: userdata/nexus-setup.sh</li>
+  <li>Security-Group: CICD-Nexus-SG </li>
 </ul>
 
 
