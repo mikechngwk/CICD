@@ -218,6 +218,44 @@ Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <cod
   <li>Security-Group: CICD-Nexus-SG </li>
 </ul>
 
+<p align="center">
+  <ins>CICD-Jenkins-Server</ins><br>
+</p>
+<ul style=“list-style-type:square”>
+<li>AMI: Ubuntu 18.0</li>
+<li>Tier: t2.small</li>
+  <li>PaC: userdata/jenkins-setup.sh</li>
+  <li>Security-Group: CICD-Jenkins-SG </li>
+</ul>
+
+<p align="center">
+  <ins>CICD-app01-staging-Server</ins><br>
+</p>
+<ul style=“list-style-type:square”>
+<li>AMI: Ubuntu 18.0</li>
+<li>Tier: t2.small</li>
+  <li>Security-Group: CICD-app-staging-sg</li>
+</ul>
+
+<p align="center">
+  <ins>CICD-be01-staging-Server</ins><br>
+</p>
+<ul style=“list-style-type:square”>
+<li>AMI: CentOS 7.0</li>
+<li>Tier: t2.micro</li>
+  <li>Security-Group: CICD-Backend-staging-sg</li>
+</ul>
+
+<p align="center">
+  <ins>CICD-WindowsServer-Server</ins><br>
+</p>
+<ul style=“list-style-type:square”>
+<li>AMI: Windows_Server-2019-English-Full-Base-2022.03.09</li>
+<li>Tier: t2.small</li>
+  <li>Security-Group: CICD-WindowsServer-SG</li>
+</ul>
+
+
 
 
 
