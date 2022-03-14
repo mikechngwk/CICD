@@ -89,5 +89,43 @@ Inbound rule4:
 <li>Description: Nexus port = 8081</li>
 </ul>
 
+<p align="center">
+  <ins>SG: CICD-Sonar-SG</ins><br>
+</p>
+Inbound rule1:
+<ul style=“list-style-type:square”>
+<li>Type: HTTP</li>
+<li>Source Type: All-IpV4</li>
+  <li>Port range: 80</li>
+<li>Source: 0.0.0.0/0</li>
+<li>Description: To allow ngix to forward request to sonarqube server</li>
+</ul>
 
-              
+Inbound rule2:
+<ul style=“list-style-type:square”>
+<li>Type: All traffic</li>
+<li>Source Type: All-IpV4</li>
+  <li>Port range: All</li>
+<li>Source: Jenkins-Security-Group</li>
+<li>Description: Allow Jenkins to upload report to sonarqube server</li>
+</ul>
+
+<p align="center">
+  <ins>SG: CICD-WindowsServer-SG</ins><br>
+</p>
+Inbound rule1:
+<ul style=“list-style-type:square”>
+<li>Type: RDP</li>
+<li>Source Type: MyIP</li>
+  <li>Port range: 3389</li>
+<li>Description: To allow our local machine to connect to windows server through RDP</li>
+</ul>
+
+Inbound rule2:
+<ul style=“list-style-type:square”>
+<li>Type: All traffic</li>
+<li>Source type: Custom</li>
+  <li>Port range: All</li>
+  <li>Source: Jenkins-security-group</li>
+<li>Description: Allow Jenkins to connect this node for software testing(selenium)</li>
+</ul>
