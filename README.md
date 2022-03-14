@@ -40,6 +40,11 @@ Build: Invoke top-level Maven targets
   <li>File path: settings.xml</li>
   <li>Properties: Fill up the properties based on your variables.<br>Eg. NEXUSPORT=8081, RELEASE-REPO= CICD-Maven-Repository-RELEASE</li>
     </ul><br>
+ 
+Build Triggers: Poll SCM  - CronJob to run this pipeline for every code commit (Continuous Integration)
+<ul style=“list-style-type:square”>
+  <li>Schedule: <code>* * * * *</code></li>
+    </ul><br>
 
 Post-Build Action: Archive the artifacts
 <ul style=“list-style-type:square”>
