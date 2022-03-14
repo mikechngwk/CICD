@@ -1,11 +1,24 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/79030801/158134282-f1ff806c-318e-4221-afb0-7cb3849169cc.png" />
+  <img src="https://user-images.githubusercontent.com/79030801/158131239-99cc298d-2524-4b86-97a4-f1ddee3ebad0.png" />
 </p>
 
-## EC2's Security Group : 
-<p align="center">
-  <ins>SG: CICD-Jenkins-SG</ins><br>
-</p>
+## Jenkin's Plugins : 
+<ul style=“list-style-type:square”>
+<li>Slack</li>
+<li>Ansible</li>
+<li>Nexus Artifact Uploader</li>
+  <li>Copy Artifact</li>
+  <li>SonarQube Scanner</li>
+  <li>Sonar Quality Gates</li>
+  <li>SonarQube Scanner</li>
+  <li>Zentimestamp</li>
+  <li>Violations</li>
+  <li>Build Pipeline</li>
+  
+<li>Description: For our local machine to connect to Jenkins through SSH port 22.</li>
+</ul>
+
+
 Inbound rule1: 
 <ul style=“list-style-type:square”>
 <li>Type: SSH</li>
