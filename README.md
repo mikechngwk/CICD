@@ -129,3 +129,75 @@ Inbound rule2:
   <li>Source: Jenkins-security-group</li>
 <li>Description: Allow Jenkins to connect this node for software testing(selenium)</li>
 </ul>
+
+<p align="center">
+  <ins>SG: CICD-Backend-staging-sg</ins><br>
+</p>
+Inbound rule1:
+<ul style=“list-style-type:square”>
+<li>Type: SSH</li>
+<li>Source Type: MyIP</li>
+  <li>Port range: 22</li>
+  <li>Source: MyIP</li>
+<li>Description: Login to this instance from local machine through SSH</li>
+</ul>
+
+Inbound rule2:
+<ul style=“list-style-type:square”>
+<li>Type: All traffic</li>
+<li>Source Type: Custom</li>
+  <li>Port range: All</li>
+  <li>Source: app-staging-security-group</li>
+<li>Description:Allows tomcat to connect this node on all ports</li>
+</ul>
+
+<p align="center">
+  <ins>SG: CICD-app-staging-sg</ins><br>
+</p>
+Inbound rule1:
+<ul style=“list-style-type:square”>
+<li>Type: SSH</li>
+<li>Source Type: MyIP</li>
+  <li>Port range: 22</li>
+  <li>Source: MyIP</li>
+<li>Description: To connect from SSH from local machine</li>
+</ul>
+
+Inbound rule2:
+<ul style=“list-style-type:square”>
+<li>Type: All traffic</li>
+<li>Source Type: Custom</li>
+  <li>Port range: All</li>
+  <li>Source: 0.0.0.0/0</li>
+</ul>
+
+Inbound rule3:
+<ul style=“list-style-type:square”>
+<li>Type: Custom TCP</li>
+<li>Source Type: Custom</li>
+  <li>Port range: 8080</li>
+  <li>Source: Windows-server-security-group</li>
+<li>Description: Allow windows to connect using private IP</li>
+</ul>
+
+Inbound rule4:
+<ul style=“list-style-type:square”>
+<li>Type: SSH</li>
+<li>Source Type: Custom</li>
+  <li>Port range: 22</li>
+  <li>Source: Jenkins-Server-Security-Group</li>
+<li>Description: Allow Ansible running in Jenkins to connect to this node</li>
+</ul>
+
+Inbound rule5:
+<ul style=“list-style-type:square”>
+<li>Type: Custom TCP</li>
+<li>Source Type: Custom</li>
+  <li>Port range: 8080</li>
+  <li>Source: 0.0.0.0/0</li>
+<li>Description: To be able to access the tomcat server webpage</li>
+</ul>
+
+
+
+
