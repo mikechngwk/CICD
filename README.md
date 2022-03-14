@@ -40,6 +40,11 @@ Build: Invoke top-level Maven targets
   <li>File path: settings.xml</li>
   <li>Properties: Fill up the properties based on your variables.<br>Eg. NEXUSPORT=8081, RELEASE-REPO= CICD-Maven-Repository-RELEASE</li>
     </ul><br>
+
+Post-Build Action: Archive the artifacts
+<ul style=“list-style-type:square”>
+  <li>Files to archive: **/.war</li>
+  </ul><br>
   
 Post-Build Action: Slack-Notification
 <ul style=“list-style-type:square”>
@@ -48,7 +53,7 @@ Post-Build Action: Slack-Notification
     <li>Notify Unstable</li>
       <li>Notify Every Failure</li>
   </ul><br>
-  
+
 Post-Build Action: Build Other projects
 <ul style=“list-style-type:square”>
   <li>Project Name: Integration-Test</li>
@@ -90,13 +95,102 @@ Build: Invoke top-level Maven targets
   <li>Goal: <code>checkstyle:checkstyle</code></li>
   <li>Settings file in filesystem</li>
   <li>File path: settings.xml</li>
-  <li>Properties: Fill up the properties based on your variables.<br>Eg. NEXUSPORT=8081, RELEASE-REPO= CICD-Maven-Repository-RELEASE</li>
+  <li>Properties: Fill up the properties based on your variables.<br>Eg. NEXUSPORT=8081, RELEASE-REPO= CICD-Maven-Repository-RELEASE</li></ul><br>
  
 Post-Build Action: Report Violations
 <ul style=“list-style-type:square”>
   <li>Adjust your checkstyle violations on the threshold for Failure & Unstable</li>
-  <li>XML Filename pattern: target/checkstyle-result.xml (generated from checkstyle checks)</li>
+  <li>XML Filename pattern: target/checkstyle-result.xml (generated from checkstyle checks)</li></ul><br>
 
+  Post-Build Action: Build Other projects
+<ul style=“list-style-type:square”>
+  <li>Project Name: Sonarqube-Code-Analysis</li>
+  </ul><br>
+  
+Post-Build Action: Slack-Notification
+<ul style=“list-style-type:square”>
+  <li>Notify Build-Start</li>
+    <li>Notify Success</li>
+    <li>Notify Unstable</li>
+      <li>Notify Every Failure</li>
+   </ul><br>
+  
+  
+ <p align="center">
+  <ins>4th Job: Sonarqube-Code-Analysis</ins><br>
+</p>
+Build: Invoke top-level Maven targets
+<ul style=“list-style-type:square”>
+  <li>Goal: <code>Install</code></li>
+  <li>Settings file in filesystem</li>
+  <li>File path: settings.xml</li>
+  <li>Properties: Fill up the properties based on your variables.<br>Eg. NEXUSPORT=8081, RELEASE-REPO= CICD-Maven-Repository-RELEASE</li> </ul><br>
+
+Build: Invoke top-level Maven targets
+<ul style=“list-style-type:square”>
+  <li>Goal: <code>checkstyle:checkstyle</code></li>
+  <li>Settings file in filesystem</li>
+  <li>File path: settings.xml</li>
+  <li>Properties: Fill up the properties based on your variables.<br>Eg. NEXUSPORT=8081, RELEASE-REPO= CICD-Maven-Repository-RELEASE</li> </ul><br>
+
+Build: Execute SonarQube Scanner
+<ul style=“list-style-type:square”>
+  <li>Analysis properties: <code>userdata/sonar-application.properties</code></li>
+  </ul><br>
+
+Post-Build Action: Quality Gates Sonarqube Plugin
+<ul style=“list-style-type:square”>
+  <li>Project key: (What you have included in the Analysis properties above)</li>
+    <li>Job Status when analysis fails: FAILED</li>
+   </ul><br>
+
+  Post-Build Action: Build Other projects
+<ul style=“list-style-type:square”>
+  <li>Project Name: Deploy-To-Nexus</li>
+  </ul><br>
+  
+Post-Build Action: Slack-Notification
+<ul style=“list-style-type:square”>
+  <li>Notify Build-Start</li>
+    <li>Notify Success</li>
+    <li>Notify Unstable</li>
+      <li>Notify Every Failure</li>
+   </ul><br>
+  
+ <p align="center">
+  <ins>5th Job: Deploy-To-Nexus</ins><br>
+</p>
+  
+General: Tick "Change data pattern for the BUILD_TIMESTAMP(build timestamp) variable)
+<ul style=“list-style-type:square”>
+  <li>Date & Time Pattern: yy-MM-dd_HHmm</li> </ul><br>
+  
+Build: Copy artifacts from another project
+<ul style=“list-style-type:square”>
+  <li>Project Name: Build</li>
+  <li>Artifacts to copy: **/*.war</li>   </ul><br>
+  
+Build: Nexus artifact uploader
+<ul style=“list-style-type:square”>
+  <li>Nexus Version: NEXUS3</li>
+  <li>Nexus URL: Private-IP of Nexus Server - Copy from AWS</li>
+  <li>Credentials : username with password </li>
+  <li>GroupId: CICD-QA</li>
+  <li>Version: $BUILD_ID</li>
+  <li>Repository: CICD-Maven-RELEASE</li>
+  <li>ArtifactId: $BUILD_TIMESTAMP</li>
+  <li>File: target/cicd.war</li>  
+  </ul><br>
+  
+  Post-Build Action: Slack-Notification
+<ul style=“list-style-type:square”>
+  <li>Notify Build-Start</li>
+    <li>Notify Success</li>
+    <li>Notify Unstable</li>
+      <li>Notify Every Failure</li>
+   </ul><br>
+  
+  
   
   
 <li>Source Type: Custom</li>
