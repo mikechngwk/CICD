@@ -16,7 +16,8 @@
   <li>Build Pipeline</li>
 
 ## Set up Nexus and come back after.
-Now, proceed to branch : <code>third-nexus-setup</code>
+Now, proceed to branch : <a href="https://github.com/mikechngwk/CICD/tree/third-nexus-setup">third-nexus-setup</a>
+  
 
 Inbound rule1: 
 <ul style=“list-style-type:square”>
