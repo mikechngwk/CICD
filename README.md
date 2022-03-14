@@ -234,7 +234,6 @@ Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <cod
 <ul style=“list-style-type:square”>
 <li>AMI: Ubuntu 18.0</li>
 <li>Tier: t2.small</li>
-    <li>PaC: userdata/tomcat-provision.sh</li>
   <li>Security-Group: CICD-app-staging-sg</li>
 </ul>
 
@@ -244,6 +243,7 @@ Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <cod
 <ul style=“list-style-type:square”>
 <li>AMI: CentOS 7.0</li>
 <li>Tier: t2.micro</li>
+  <li>PaC: <code>backend-stack.sh</code></li>
   <li>Security-Group: CICD-Backend-staging-sg</li>
 </ul>
 
