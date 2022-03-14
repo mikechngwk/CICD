@@ -23,12 +23,10 @@
 Now, proceed to branch : <a href="https://github.com/mikechngwk/CICD/tree/third-nexus-setup">third-nexus-setup</a>
   
 ## Set up SonarQube.
-Now, proceed to branch : <a href="https://github.com/mikechngwk/CICD/tree/third-nexus-setup">third-nexus-setup</a>
+Now, proceed to branch : <a href="https://github.com/mikechngwk/CICD/tree/fourth-sonarqube-setup">fourth-sonarqube-setup</a>
  
 ## Integrate Jenkins with Slack 
-  <img src="https://user-images.githubusercontent.com/79030801/158134468-b8e4b6f7-3632-4d03-bfb2-169ebbe869ef.png" />
-  
-  Integrate your Jenkins with Slack, you may refer to this <a href="https://www.youtube.com/watch?v=TWwvxn2-J7E&t=19s">Slack-Jenkins-Integration</a>
+Integrate your Jenkins with Slack, you may refer to this <a href="https://www.youtube.com/watch?v=TWwvxn2-J7E&t=19s">Slack-Jenkins-Integration</a>
   
  ## Build jobs in Pipeline
   
