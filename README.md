@@ -8,7 +8,7 @@ As such, this project aims to create a infrastructure which enables Continuous I
 
 Developer will be notified if there are any fatal code bugs and they can fix it immediately. Bugs will be presented in a very readable format with SonarQube.
 
-## Techonologies:
+## Techonologies :
 <p float="left">
 <img src="https://user-images.githubusercontent.com/79030801/158131239-99cc298d-2524-4b86-97a4-f1ddee3ebad0.png" style="height: auto; width:200px;"/>
   
@@ -28,8 +28,16 @@ Developer will be notified if there are any fatal code bugs and they can fix it 
   
   <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/158134444-85982182-6bff-4b69-9288-9da249884454.png" style="height: auto; width:200px;"/>
   
+  <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/158166082-62bdaa5a-1884-46b5-a1f1-1e261672545f.png" style="height: auto; width:200px;"/>
+  
+  <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/158166169-ba12475e-e9f7-4907-b454-59965892af21.png" style="height: auto; width:200px;"/>
+  
 </p>
 
+## Infrastructure :
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/79030801/158167797-861e7fef-3af0-4ae1-b98a-68e5c657049c.png" />
+</p>
 
 
 
