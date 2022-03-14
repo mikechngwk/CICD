@@ -8,12 +8,45 @@
 </p>
 
 We will setup EC2 instances for all of our servers.
-Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <mark>userdata</mark>userdata for the bash scripts for each individual servers.
+Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <code> <b>userdata</b> </code>for the bash scripts for each individual servers.
 
 ## Security Group : 
 
+<b><u>SG: CICD-Jenkins-SG</b></u><br>
+Inbound rule1: 
+<ul style=“list-style-type:square”>
+<li>Type: SSH</li>
+<li>Source Type: MyIP</li>
+<li>Description: For our local machine to connect to Jenkins through SSH port 22.</li>
+</ul>
+Inbound rule2:
+<ul style=“list-style-type:square”>
+<li>Type: Custom TCP</li>
+<li>Source Type: MyIP</li>
+<li>Port Range: 8080</li>
+<li>Description: Jenkins run on port 8080</li>
+</ul>
+Inbound rule3:(To be added after sonarqube-security-group is created)
+<ul style=“list-style-type:square”>
+<li>Type: All traffic</li>
+<li>Source Type: Custom</li>
+<li>Source: (Sonarqube SecurityGroup)</li>
+<li>Description: Allow sonarqube to access Jenkins to extract code-analysis for sonarqube to generatea reports for quality gates.</li>
+</ul>
+Inbound rule4:(To be added after jenkins-security-group is created)
+<ul style=“list-style-type:square”>
+<li>Type: SSH</li>
+<li>Source Type: Custom</li>
+<li>Source: Jenkins Security Group</li>
+<li>Description: Allow ansible running in Jenkins to connect to this node using SSH port 22</li>
+</ul>
+Inbound rule5:(To be added after windows-security-group is created)
+<ul style=“list-style-type:square”>
+<li>Type: All traffic</li>
+<li>Source Type: Custom</li>
+<li>Source: Windows-SG</li>
+<li>Description: Allow windows server/slave to connect jenkins/master</li>
+</ul>
 
 
-
-Developer will be notified if there are any fatal code bugs and they can fix it immediately. Bugs will be presented in a very readable format with SonarQube.
-
+              
