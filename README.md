@@ -14,10 +14,9 @@
   <li>Zentimestamp</li>
   <li>Violations</li>
   <li>Build Pipeline</li>
-  
-<li>Description: For our local machine to connect to Jenkins through SSH port 22.</li>
-</ul>
 
+## Set up Nexus and come back after.
+Now, proceed to branch : <code>third-nexus-setup</code>
 
 Inbound rule1: 
 <ul style=“list-style-type:square”>
