@@ -19,14 +19,21 @@
   <li>Violations</li>
   <li>Build Pipeline</li>
 
+ 
 ## Set up Nexus.
 Now, proceed to branch : <a href="https://github.com/mikechngwk/CICD/tree/third-nexus-setup">third-nexus-setup</a>
   
 ## Set up SonarQube.
 Now, proceed to branch : <a href="https://github.com/mikechngwk/CICD/tree/fourth-sonarqube-setup">fourth-sonarqube-setup</a>
- 
+
+
+## Set up Ansible.
+Now, proceed to branch : <a href="https://github.com/mikechngwk/CICD/blob/fifth-ansible-setup/README.md">fifth-ansible-setup</a>
+  
+
 ## Integrate Jenkins with Slack 
 Integrate your Jenkins with Slack, you may refer to this <a href="https://www.youtube.com/watch?v=TWwvxn2-J7E&t=19s">Slack-Jenkins-Integration</a>
+
   
  ## Build jobs in Pipeline
   
@@ -212,6 +219,14 @@ Build: Nexus artifact uploader
   <li>File: target/cicd.war</li>  
   </ul><br>
   
+  
+    Post-Build Action: Trigger parameterized build on other projects
+<ul style=“list-style-type:square”>
+  <li>Project to build: Deploy-To-Staging</li>
+    <li>Add parameters: TIME = $BUILD_TIMESTAMP, ID = $BUILD_ID</li>
+   </ul><br>
+
+  
   Post-Build Action: Slack-Notification
 <ul style=“list-style-type:square”>
   <li>Notify Build-Start</li>
@@ -220,7 +235,45 @@ Build: Nexus artifact uploader
       <li>Notify Every Failure</li>
    </ul><br>
 
+ <p align="center">
+  <ins>7th Job: Deploy-To-Staging</ins><br>
+</p>
+  
 
+Build: Invoke Ansible Playbook
+<ul style=“list-style-type:square”>
+  <li>Playbook path: ansible/site.yml </li>
+  <li>Inventory: Inline Content</li>
+  <li>Content : (name of the host) ansible_host=(PrivateIP of cicd-staging-uat server <-- get from AWS) <br> [appsrvgrp]</li>
+  <li>Credentials: SSH Username with privatekey</li>
+  <li>Username: ubuntu</li>
+  <li>Private key: (Copy the private key used for  cicd-staging-uat-server and paste it here)</li><br>
+  <li>Disable host SSH key check variable</li>
+  <li>Unbuffered stdout</li>
+    <li>Variable ["USER"] = (nexus's username)</li>
+    <li>Variable ["PASS"] = (nexus's passwrd)</li>
+    <li>Variable ["nexusip"] = (nexus's server private IP <-- get from AWS)</li>
+    <li>Variable ["reponame"] = CICD-Maven-RELEASE</li>
+    <li>Variable ["groupid"] = QA</li>
+    <li>Variable ["time"] = $TIME</li>
+    <li>Variable ["build"] = $BUILD</li>
+    <li>Variable ["cicd_version"] = $TIME-$ID.war</li>
+
+  
+
+Now that we have provided credentials for cicd-staging-uat-server, Ansible will use these credentails to log into the server
+  </ul><br>
+  
+Source Code Management
+<ul style=“list-style-type:square”>
+  <li>Branch Specifier: fifth-ansible-setup</li> </ul><br>
+    Post-Build Action: Slack-Notification
+<ul style=“list-style-type:square”>
+  <li>Notify Build-Start</li>
+    <li>Notify Success</li>
+    <li>Notify Unstable</li>
+      <li>Notify Every Failure</li>
+   </ul><br>
 
 
 
