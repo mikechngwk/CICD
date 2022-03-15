@@ -273,9 +273,17 @@ Source Code Management
       <li>Notify Every Failure</li>
    </ul><br>
   
+      Post-Build Action: Triger parameterized build on other projects
+<ul style=“list-style-type:square”>
+  <li>Project to build: Deploy-To-Prod-Ansible</li>
+    <li>Trigger when build is: Stable</li>
+    <li>Predefined parameters: TIME=$TIME, ID=$ID</li>
+   </ul><br>
+
+  
     Post-Build Action: Build Other projects
 <ul style=“list-style-type:square”>
-  <li>Project Name: Windows-Software-Testing</li>
+  <li>Project Name: Deploy-To-Prod</li>
   </ul><br>
   
     Post-Build Action: Slack-Notification
@@ -290,17 +298,36 @@ Source Code Management
   <ins>6th Job: Deploy-To-Prod</ins><br>
 </p>
   
-Branches to build: */seleniumautomationtesting
+General: This project is parameterized - String Parameter
 <ul style=“list-style-type:square”>
-  <li>Date & Time Pattern: yy-MM-dd_HHmm</li> </ul><br>
+  <li>Name: TIME</li> </ul><br>
+  <li>Name: ID</li> </ul><br>
   
-  Build: Invoke top-level Maven targets
+ 
+ Build: Invoke Ansible Playbook
 <ul style=“list-style-type:square”>
-  <li>Goal: <code>clean test -DskipTests</code></li>
-  <li>Settings file in filesystem</li>
-  <li>File path: settings.xml</li>
-  <li>Properties: Fill up the properties based on your variables.<br>Eg. NEXUSPORT=8081, RELEASE-REPO= CICD-Maven-Repository-RELEASE</li> </ul><br>
+  <li>Playbook path: ansible/site.yml </li>
+  <li>Inventory: Inline Content</li>
+  <li>Content : (name of the host) ansible_host=(PrivateIP of cicd-PROD-server <-- get from AWS) <br> [appsrvgrp]</li>
+  <li>Credentials: SSH Username with privatekey</li>
+  <li>Username: ubuntu</li>
+  <li>Private key: (Copy the private key used for cicd-PROD-server and paste it here)</li><br>
+  <li>Disable host SSH key check variable</li>
+  <li>Unbuffered stdout</li>
+    <li>Variable ["USER"] = (nexus's username)</li>
+    <li>Variable ["PASS"] = (nexus's passwrd)</li>
+    <li>Variable ["nexusip"] = (nexus's server private IP <-- get from AWS)</li>
+    <li>Variable ["reponame"] = CICD-Maven-RELEASE</li>
+    <li>Variable ["groupid"] = QA</li>
+    <li>Variable ["time"] = $TIME</li>
+    <li>Variable ["build"] = $BUILD</li>
+    <li>Variable ["cicd_version"] = $TIME-$ID.war</li>
 
+Now that we have provided credentials for cicd-PROD-server, Ansible will use these credentails to log into the server
+  </ul><br>
+ 
+ 
+ 
      Post-Build Action: Slack-Notification
 <ul style=“list-style-type:square”>
   <li>Notify Build-Start</li>
