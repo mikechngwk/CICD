@@ -236,7 +236,7 @@ Build: Nexus artifact uploader
    </ul><br>
 
  <p align="center">
-  <ins>7th Job: Deploy-To-Staging</ins><br>
+  <ins>6th Job: Deploy-To-Staging</ins><br>
 </p>
   
 
@@ -273,7 +273,7 @@ Source Code Management
       <li>Notify Every Failure</li>
    </ul><br>
   
-      Post-Build Action: Triger parameterized build on other projects
+Post-Build Action: Triger parameterized build on other projects
 <ul style=“list-style-type:square”>
   <li>Project to build: Deploy-To-Prod-Ansible</li>
     <li>Trigger when build is: Stable</li>
@@ -281,12 +281,12 @@ Source Code Management
    </ul><br>
 
   
-    Post-Build Action: Build Other projects
+Post-Build Action: Build Other projects
 <ul style=“list-style-type:square”>
   <li>Project Name: Deploy-To-Prod</li>
   </ul><br>
   
-    Post-Build Action: Slack-Notification
+Post-Build Action: Slack-Notification
 <ul style=“list-style-type:square”>
   <li>Notify Build-Start</li>
     <li>Notify Success</li>
@@ -295,12 +295,12 @@ Source Code Management
    </ul><br>
 
    <p align="center">
-  <ins>6th Job: Deploy-To-Prod</ins><br>
+  <ins>7th Job: Deploy-To-Prod</ins><br>
 </p>
   
 General: This project is parameterized - String Parameter
 <ul style=“list-style-type:square”>
-  <li>Name: TIME</li> </ul><br>
+  <li>Name: TIME</li>
   <li>Name: ID</li> </ul><br>
   
  
@@ -328,7 +328,7 @@ Now that we have provided credentials for cicd-PROD-server, Ansible will use the
  
  
  
-     Post-Build Action: Slack-Notification
+Post-Build Action: Slack-Notification
 <ul style=“list-style-type:square”>
   <li>Notify Build-Start</li>
     <li>Notify Success</li>
