@@ -259,8 +259,6 @@ Build: Invoke Ansible Playbook
     <li>Variable ["build"] = $BUILD</li>
     <li>Variable ["cicd_version"] = $TIME-$ID.war</li>
 
-  
-
 Now that we have provided credentials for cicd-staging-uat-server, Ansible will use these credentails to log into the server
   </ul><br>
   
@@ -274,6 +272,41 @@ Source Code Management
     <li>Notify Unstable</li>
       <li>Notify Every Failure</li>
    </ul><br>
+  
+    Post-Build Action: Build Other projects
+<ul style=“list-style-type:square”>
+  <li>Project Name: Windows-Software-Testing</li>
+  </ul><br>
+  
+    Post-Build Action: Slack-Notification
+<ul style=“list-style-type:square”>
+  <li>Notify Build-Start</li>
+    <li>Notify Success</li>
+    <li>Notify Unstable</li>
+      <li>Notify Every Failure</li>
+   </ul><br>
 
+   <p align="center">
+  <ins>6th Job: Deploy-To-Prod</ins><br>
+</p>
+  
+Branches to build: */seleniumautomationtesting
+<ul style=“list-style-type:square”>
+  <li>Date & Time Pattern: yy-MM-dd_HHmm</li> </ul><br>
+  
+  Build: Invoke top-level Maven targets
+<ul style=“list-style-type:square”>
+  <li>Goal: <code>clean test -DskipTests</code></li>
+  <li>Settings file in filesystem</li>
+  <li>File path: settings.xml</li>
+  <li>Properties: Fill up the properties based on your variables.<br>Eg. NEXUSPORT=8081, RELEASE-REPO= CICD-Maven-Repository-RELEASE</li> </ul><br>
+
+     Post-Build Action: Slack-Notification
+<ul style=“list-style-type:square”>
+  <li>Notify Build-Start</li>
+    <li>Notify Success</li>
+    <li>Notify Unstable</li>
+      <li>Notify Every Failure</li>
+   </ul><br>
 
 
