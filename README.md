@@ -247,6 +247,5 @@ Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <cod
   <li>Security-Group: CICD-app-staging-sg</li>
 </ul>
 
-
-
+<a href="https://github.com/mikechngwk/CICD/blob/second-jenkins">Set up Jenkins!</a>
 
