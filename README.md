@@ -26,8 +26,6 @@ Developer will be notified if there are any fatal code bugs and they can fix it 
   
   <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/158131450-20f98a4c-64da-493b-bde7-085c7b86139d.png" style="height: auto; width:200px;"/>
   
-  <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/158134444-85982182-6bff-4b69-9288-9da249884454.png" style="height: auto; width:200px;"/>
-  
   <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/158166082-62bdaa5a-1884-46b5-a1f1-1e261672545f.png" style="height: auto; width:200px;"/>
   
   <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/158166169-ba12475e-e9f7-4907-b454-59965892af21.png" style="height: auto; width:200px;"/>
