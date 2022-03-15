@@ -4,6 +4,14 @@
 
 ## Description : 
 Ansible will be installed in Jenkins Server and be used to set up our UAT & Prod servers. 
+
+## Playbooks:
+1. site.yml : Calls tomcat_setup.yml & cicd-app-setup.yml
+2. tomcat_setup.yml : Setup tomcat service
+3. cicd-app-setup.yml : Download artifacts from Nexus repo and deploy to tomcat server with a rollback feature.
+
+## Playbook: tomcat_setup.yml
+1. From our AWS EC2 instance, our cicd-staging-uat-server was 
 <p align="center">
   <ins>SG: CICD-Jenkins-SG</ins><br>
 </p>
