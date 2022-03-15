@@ -34,7 +34,7 @@ Developer will be notified if there are any fatal code bugs and they can fix it 
 
 ## Infrastructure :
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/79030801/158167797-861e7fef-3af0-4ae1-b98a-68e5c657049c.png" />
+  <img src="https://user-images.githubusercontent.com/79030801/158292361-4646639a-a504-4a9e-8fff-3bbb85e798e2.png" />
 </p>
 
 
