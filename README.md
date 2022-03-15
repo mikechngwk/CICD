@@ -102,16 +102,6 @@ Inbound rule2:
 <li>Description: Allow Jenkins to upload report to sonarqube server</li>
 </ul>
 
-<p align="center">
-  <ins>SG: CICD-WindowsServer-SG</ins><br>
-</p>
-Inbound rule1:
-<ul style=“list-style-type:square”>
-<li>Type: RDP</li>
-<li>Source Type: MyIP</li>
-  <li>Port range: 3389</li>
-<li>Description: To allow our local machine to connect to windows server through RDP</li>
-</ul>
 
 Inbound rule2:
 <ul style=“list-style-type:square”>
@@ -247,15 +237,6 @@ Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <cod
   <li>Security-Group: CICD-Backend-staging-sg</li>
 </ul>
 
-<p align="center">
-  <ins>CICD-WindowsServer-Server</ins><br>
-</p>
-<ul style=“list-style-type:square”>
-<li>AMI: Windows_Server-2019-English-Full-Base-2022.03.09</li>
-  <li>PaC: <code>userdata/windows-node</code></li>
-<li>Tier: t2.small</li>
-  <li>Security-Group: CICD-WindowsServer-SG</li>
-</ul>
 
 <p align="center">
   <ins>CICD-PROD-Server</ins><br>
