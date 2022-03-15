@@ -194,7 +194,7 @@ Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <cod
 <ul style=“list-style-type:square”>
 <li>AMI: Ubuntu 18.0</li>
 <li>Tier: t2.medium</li>
-  <li>PaC: userdata/sonar-setup.sh</li>
+  <li>PaC: <code>userdata/sonar-setup.sh</code></li>
   <li>Security-Group: CICD-Sonar-SG </li>
 </ul>
 
@@ -204,7 +204,7 @@ Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <cod
 <ul style=“list-style-type:square”>
 <li>AMI: CentOS 7.0</li>
 <li>Tier: t2.medium</li>
-  <li>PaC: userdata/nexus-setup.sh</li>
+  <li>PaC: <code>userdata/nexus-setup.sh</code></li>
   <li>Security-Group: CICD-Nexus-SG </li>
 </ul>
 
@@ -214,7 +214,7 @@ Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <cod
 <ul style=“list-style-type:square”>
 <li>AMI: Ubuntu 18.0</li>
 <li>Tier: t2.small</li>
-  <li>PaC: userdata/jenkins-setup.sh</li>
+  <li>PaC: <code>userdata/jenkins-setup.sh</code></li>
   <li>Security-Group: CICD-Jenkins-SG </li>
 </ul>
 
