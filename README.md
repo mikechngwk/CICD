@@ -1,8 +1,9 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/79030801/158134282-f1ff806c-318e-4221-afb0-7cb3849169cc.png" />
+  <img src="https://user-images.githubusercontent.com/79030801/158131614-172887e7-86dd-4758-9c9c-f385b24f5d84.png" />
 </p>
 
-## EC2's Security Group : 
+## Description : 
+Ansible will be installed in Jenkins Server and be used to set up our UAT & Prod servers. 
 <p align="center">
   <ins>SG: CICD-Jenkins-SG</ins><br>
 </p>
