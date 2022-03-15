@@ -27,9 +27,11 @@ cicd-app-setup.yml will be used to: <br>
 2. Install Ansible on Jenkins  
 <code>$sudo apt update</code><br>
 <code>$sudo apt install software-properties-common</code></br>
-<code>$ sudo apt install software-properties-common </code></br>
-<code>$ sudo add-apt-repository --yes --update ppa:ansible/ansible </code></br>
-<code>$ sudo apt install ansible</code></code></br>
+<code>$sudo apt install software-properties-common </code></br>
+<code>$sudo add-apt-repository --yes --update ppa:ansible/ansible </code></br>
+<code>$sudo apt install ansible</code></code></br>
+<a href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-ubuntu">Ansible-Ubuntu Documentation</a>
+  
 
 
 
