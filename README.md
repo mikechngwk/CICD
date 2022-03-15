@@ -243,7 +243,7 @@ Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <cod
 <ul style=“list-style-type:square”>
 <li>AMI: CentOS 7.0</li>
 <li>Tier: t2.micro</li>
-  <li>PaC: <code>backend-stack.sh</code></li>
+  <li>PaC: <code>userdata/backend-stack.sh</code></li>
   <li>Security-Group: CICD-Backend-staging-sg</li>
 </ul>
 
@@ -252,6 +252,7 @@ Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <cod
 </p>
 <ul style=“list-style-type:square”>
 <li>AMI: Windows_Server-2019-English-Full-Base-2022.03.09</li>
+  <li>PaC: <code>userdata/windows-node</code></li>
 <li>Tier: t2.small</li>
   <li>Security-Group: CICD-WindowsServer-SG</li>
 </ul>
