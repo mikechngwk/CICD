@@ -262,7 +262,6 @@ Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <cod
 </p>
 <ul style=“list-style-type:square”>
 <li>AMI: Ubuntu 18.0</li>
-  <li>PaC: <code>userdata/windows-node</code></li>
 <li>Tier: t2.micro</li>
   <li>Security-Group: CICD-app-staging-sg</li>
 </ul>
