@@ -6,7 +6,8 @@
 In an agile software development life cycle,there are countless number of code changes from sprints. As such, developer have to deploy their code and test it whenever there is a code change and this is rather time consuming. 
 As such, this project aims to create a infrastructure which enables Continuous Integration(CI) & Continuous Delivery(CD) life cycle where it will automate Build->Test->Deploy for every code commit. A notification will also be sent to developer through Slack whenever a job is triggered in this CICD LifeCycle. 
 
-Developer will be notified if there are any fatal code bugs and they can fix it immediately. Bugs will be presented in a very readable format with SonarQube.
+A CronJob will be setup in a way that each time a developer commits a code, it will trigger the CICD pipeline and notify the developer if there are any fatal code bugs to be fixed immediately. This notification will be done through Slack and bugs will be presented in SonarQube-reports.
+
 
 ## Technologies :
 <p float="left">
