@@ -31,7 +31,7 @@ A CronJob will be setup in a way that each time a developer commits a code, it w
   
   <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/158166169-ba12475e-e9f7-4907-b454-59965892af21.png" style="height: auto; width:200px;"/>
   
-    <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/212479818-40cb90f5-3d30-40de-9062-8c450d5ec298.png" style="height: auto; width:200px;"/>
+  <img class="circular_image" src="https://user-images.githubusercontent.com/79030801/212479818-40cb90f5-3d30-40de-9062-8c450d5ec298.png" style="height: auto; width:200px;"/>
 
 </p>
 
