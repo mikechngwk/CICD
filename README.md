@@ -188,7 +188,7 @@ Inbound rule5:
 We will setup EC2 instances for all of our servers.
 Most of the EC2 instances will be setup as Platform As Code (PAC). Refer to <code> <b>userdata</b></code>for the bash scripts for each individual servers.
 
-########################################################UPDATE 14th Jan 2023!!######################################################################
+<p align="center"><b><u>UPDATE 14th Jan 2023!!</u></b></p>
 Terraform have been included and you can set up your EC2 servers in less than 5 seconds by using "terraform apply main.tf"!
 
 <p align="center">
